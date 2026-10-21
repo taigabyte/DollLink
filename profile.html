@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perfil</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Pirata+One&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Special+Elite&family=Courier+Prime&family=Playfair+Display&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="tv"></div>
+<article class="profile" id="profile">
+  <div class="av"><img id="pAvatar" alt=""></div>
+  <h2 id="pName" class="name"></h2>
+  <p id="pDesc"></p>
+  <small id="pLoc"></small>
+  <div class="badges"><span>✦ Premium</span><span>★ OG</span></div>
+  <div class="socials" id="pSocials"></div>
+  <input type="range" id="vol" min="0" max="1" step=".05" value=".5">
+</article>
+<audio id="audio" loop></audio>
+<div id="hint" hidden>🔊 clique na página para ativar a música</div>
+
+<script src="common.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

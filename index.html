@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DollLink</title>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Pirata+One&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Special+Elite&family=Courier+Prime&family=Playfair+Display&family=EB+Garamond:wght@400&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="dash">
+  <h1 class="logo"><span class="doll">Doll</span><span class="link">Link</span></h1>
+  <a class="open" href="profile.html" target="_blank">↗ ABRIR PÁGINA PÚBLICA (profile.html)</a>
+
+  <section class="card"><h2>Envio de mídias</h2><div id="media"></div></section>
+
+  <section class="card"><h2>Personalização geral</h2>
+    <label>Nome de usuário <input type="text" data-key="username"></label>
+    <label>Fonte do nome <select data-key="nameFont" class="fonts"></select></label>
+    <label>Descrição <input type="text" data-key="desc"></label>
+    <label>Fonte da descrição <select data-key="descFont" class="fonts"></select></label>
+    <label>Localização <input type="text" data-key="location"></label>
+    <label>Efeito de fundo
+      <select data-key="bgEffect">
+        <option value="none">Nenhum</option><option value="tv">TV antiga</option>
+        <option value="static">Névoa estática de TV</option><option value="snow">Neve</option>
+        <option value="fog">Névoa e fumaça</option>
+        <option value="blood">Sangue escorrendo</option>
+        <option value="tvFail">TV pifando</option>
+        <option value="rain">Chuva</option><option value="matrix">Matrix-Goth</option>
+        <option value="stars">Noite estrelada</option>
+        <option value="fireflies">Vagalumes</option>
+        <option value="embers">Brasas</option>
+        <option value="petals">Pétalas</option>
+        <option value="crosses">Cruzes †</option>
+        <option value="aurora">Aurora</option>
+        <option value="lightning">Relâmpago</option>
+       <option value="bats">Morcegos</option>
+      </select></label>
+    <label>Efeito do nome
+      <select data-key="nameEffect">
+        <option value="none">Nenhum</option><option value="pulse">Pulsar</option>
+        <option value="neon">Glow neon</option><option value="glitch">Distorção glitch</option>
+        <option value="shaky">Tremor shaky</option>
+        <option value="typewriter">Máquina de escrever</option>
+        <option value="rainbow">Arco-íris</option>
+        <option value="blurry">Fosco</option>
+        <option value="scramble">Embaralhado</option>
+        <option value="flicker">Neon quebrado</option>
+        <option value="tvVintage">TV antiga (linhas CRT)</option>
+        <option value="tvFailName">TV pifando</option>
+        <option value="tvStaticName">Estática de TV</option>
+        <option value="float">Flutuar</option>
+      </select></label>
+    <label>Opacidade do perfil <input type="range" min="0" max="100" data-key="opacity"></label>
+    <label>Desfoque do perfil <input type="range" min="0" max="30" data-key="blur"></label>
+  </section>
+
+  <section class="card"><h2>Brilho (glow)</h2><div id="glow"></div></section>
+  <section class="card"><h2>Cores</h2><div id="colors"></div><div id="grad"></div></section>
+  <section class="card"><h2>Outras personalizações</h2><div id="others"></div></section>
+  <section class="card"><h2>Redes sociais</h2><div id="grid" class="grid"></div><div id="urls"></div></section>
+</aside>
+<iframe src="profile.html" allow="autoplay" title="Preview"></iframe>
+
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

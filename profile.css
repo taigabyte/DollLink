@@ -1,0 +1,68 @@
+:root{--bg:#0b0b0b;--panel2:#1a1a1a;--line:#2a2a2a;--mute:#b3b3b3}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:'Inter',sans-serif;background:var(--bg) center/cover no-repeat fixed;color:var(--text,#fff);display:grid;place-items:center;overflow:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.tv{position:fixed;inset:0;pointer-events:none;display:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.35) 0 1px,transparent 1px 3px);animation:flick .15s infinite}
+.tv.on{display:block}
+@keyframes flick{50%{opacity:.85}}
+
+/* Glassmorphism */
+.profile{position:relative;width:min(380px,90%);padding:28px 22px;text-align:center;border-radius:16px;border:0;
+  background:rgba(22,22,22,var(--op,.6));backdrop-filter:blur(var(--blur,12px));-webkit-backdrop-filter:blur(var(--blur,12px));
+  display:flex;flex-direction:column;align-items:center;gap:10px}
+.profile.profileInvisible{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.av{width:96px;height:96px;border-radius:50%;padding:3px}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--panel2)}
+.decor .av{background:conic-gradient(var(--accent),transparent,var(--accent));animation:spin 4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.name{font-size:32px;color:var(--accent)}
+#pDesc,small{color:var(--mute)}
+.badges{display:flex;gap:6px}
+.badges span{font-size:12px;padding:3px 9px;border:1px solid rgba(255,255,255,.15);border-radius:20px}
+.socials{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.socials a{width:44px;height:44px;display:grid;place-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:10px;transition:.2s}
+.socials a:hover{transform:translateY(-3px);border-color:var(--accent)}
+.ico{width:22px;height:22px;background:var(--icon);-webkit-mask:var(--url) center/contain no-repeat;mask:var(--url) center/contain no-repeat}
+.mono .ico{background:var(--text)}
+.invert .socials a,.invert .badges span{background:var(--text);color:var(--bg)}
+.invert .ico{background:var(--bg)}
+#vol{width:120px;accent-color:var(--accent)}
+
+/* Glow */
+.glowName .name{text-shadow:0 0 12px var(--accent),0 0 28px var(--accent)}
+.glowSocials .socials a{box-shadow:0 0 12px var(--accent)}
+.glowBadges .badges span{box-shadow:0 0 10px var(--accent)}
+
+/* Efeitos do nome */
+.pulse{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.neon{text-shadow:0 0 6px var(--accent),0 0 20px var(--accent),0 0 42px var(--accent);animation:neon 2.5s infinite alternate}
+@keyframes neon{to{text-shadow:0 0 3px var(--accent),0 0 10px var(--accent)}}
+.glitch{animation:glitch 1s steps(2) infinite}
+@keyframes glitch{0%{text-shadow:2px 0 red,-2px 0 cyan}50%{text-shadow:-2px 0 red,2px 0 cyan;transform:translateX(1px)}100%{text-shadow:none}}
+.shaky{display:inline-block;animation:shaky .35s linear infinite}
+@keyframes shaky{25%{transform:translate(1px,-1px) rotate(.5deg)}50%{transform:translate(-1px,1px) rotate(-.5deg)}75%{transform:translate(1px,1px)}}
+#hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:12px;color:#b3b3b3}
+/* Efeitos novos do nome */
+.rainbow{background:linear-gradient(90deg,#ff3b3b,#ffb02e,#ffee32,#3bff7a,#32c8ff,#b06bff,#ff3b3b);background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none !important;animation:rb 3s linear infinite}
+@keyframes rb{to{background-position:200% center}}
+.blurry{animation:blurry 2.5s ease-in-out infinite}
+@keyframes blurry{50%{filter:blur(3px);opacity:.6}}
+.flicker{animation:flicker 3s infinite}
+@keyframes flicker{0%,19%,21%,23%,100%{opacity:1}20%,22%{opacity:.2}}
+.float{display:inline-block;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+.tvVintage{position:relative;animation:tvVintage 3s steps(1,end) infinite}
+@keyframes tvVintage{0%,92%,100%{filter:none}93%{filter:contrast(1.5) brightness(.65)}95%{filter:brightness(1.35)}97%{filter:blur(.5px)}}
+.tvFailName{animation:tvFailName 2.8s steps(1,end) infinite}
+@keyframes tvFailName{0%,72%,76%,100%{opacity:1;transform:none;text-shadow:none}73%{opacity:.2;transform:translateX(-3px) skewX(-8deg);text-shadow:3px 0 #f33,-3px 0 #8cf}74%{opacity:1;transform:translateX(2px);text-shadow:-4px 0 #f33,4px 0 #8cf}75%{opacity:.45;clip-path:inset(40% 0 45%);}}
+.tvStaticName{animation:tvStaticName .12s steps(2,end) infinite}
+@keyframes tvStaticName{0%{filter:contrast(1.5) brightness(1.2);text-shadow:1px 0 rgba(255,255,255,.8),-1px 0 rgba(0,0,0,.8)}25%{filter:contrast(2) brightness(.75);text-shadow:-2px 0 rgba(255,255,255,.8),2px 0 rgba(0,0,0,.8)}50%{filter:blur(.35px) brightness(1.4);text-shadow:2px 1px rgba(255,255,255,.7),-2px -1px rgba(0,0,0,.8)}75%{filter:contrast(1.8) brightness(.9);text-shadow:-1px 0 rgba(255,255,255,.8),1px 0 rgba(0,0,0,.8)}}
+
+/* Ícone de localização */
+#pLoc{display:inline-flex;align-items:center;gap:6px}
+#pLoc.has::before{content:"";width:14px;height:16px;flex:none;background:var(--text,#fff);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E") center/contain no-repeat}
